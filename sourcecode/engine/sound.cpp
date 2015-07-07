@@ -1,7 +1,9 @@
 // sound.cpp: basic positional sound using sdl_mixer
 
 #include "engine.h"
-
+#include "fmod_studio.hpp"
+#include "fmod.hpp"
+#include "common.h"
 #include "SDL_mixer.h"
 #define MAXVOL MIX_MAX_VOLUME
 

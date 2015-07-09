@@ -7,6 +7,26 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2216A7771B4F00E3005CBD95 /* libfmod.dylib in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2216A7751B4F00E3005CBD95 /* libfmod.dylib */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
+		2216A7781B4F00E3005CBD95 /* libfmodL.dylib in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2216A7761B4F00E3005CBD95 /* libfmodL.dylib */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
+		2216A7861B4F0108005CBD95 /* 640148main_APU Shutdown.ogg in Resources */ = {isa = PBXBuildFile; fileRef = 2216A77A1B4F0108005CBD95 /* 640148main_APU Shutdown.ogg */; };
+		2216A7871B4F0108005CBD95 /* 640165main_Lookin At It.ogg in Resources */ = {isa = PBXBuildFile; fileRef = 2216A77B1B4F0108005CBD95 /* 640165main_Lookin At It.ogg */; };
+		2216A7881B4F0108005CBD95 /* 640166main_MECO.ogg in Resources */ = {isa = PBXBuildFile; fileRef = 2216A77C1B4F0108005CBD95 /* 640166main_MECO.ogg */; };
+		2216A7891B4F0108005CBD95 /* 640169main_Press to ATO.ogg in Resources */ = {isa = PBXBuildFile; fileRef = 2216A77D1B4F0108005CBD95 /* 640169main_Press to ATO.ogg */; };
+		2216A78A1B4F0108005CBD95 /* Character.bank in Resources */ = {isa = PBXBuildFile; fileRef = 2216A77E1B4F0108005CBD95 /* Character.bank */; };
+		2216A78B1B4F0108005CBD95 /* Master Bank.bank in Resources */ = {isa = PBXBuildFile; fileRef = 2216A77F1B4F0108005CBD95 /* Master Bank.bank */; };
+		2216A78C1B4F0108005CBD95 /* Master Bank.strings.bank in Resources */ = {isa = PBXBuildFile; fileRef = 2216A7801B4F0108005CBD95 /* Master Bank.strings.bank */; };
+		2216A78D1B4F0108005CBD95 /* Music.bank in Resources */ = {isa = PBXBuildFile; fileRef = 2216A7811B4F0108005CBD95 /* Music.bank */; };
+		2216A78E1B4F0108005CBD95 /* Surround_Ambience.bank in Resources */ = {isa = PBXBuildFile; fileRef = 2216A7821B4F0108005CBD95 /* Surround_Ambience.bank */; };
+		2216A78F1B4F0108005CBD95 /* UI_Menu.bank in Resources */ = {isa = PBXBuildFile; fileRef = 2216A7831B4F0108005CBD95 /* UI_Menu.bank */; };
+		2216A7901B4F0108005CBD95 /* Vehicles.bank in Resources */ = {isa = PBXBuildFile; fileRef = 2216A7841B4F0108005CBD95 /* Vehicles.bank */; };
+		2216A7911B4F0108005CBD95 /* Weapons.bank in Resources */ = {isa = PBXBuildFile; fileRef = 2216A7851B4F0108005CBD95 /* Weapons.bank */; };
+		2216A79C1B4F0332005CBD95 /* common_platform.mm in Sources */ = {isa = PBXBuildFile; fileRef = 2216A7991B4F0332005CBD95 /* common_platform.mm */; };
+		2216A79D1B4F0332005CBD95 /* common.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2216A79A1B4F0332005CBD95 /* common.cpp */; };
+		2216A79E1B4F0BED005CBD95 /* libfmod.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 2216A7751B4F00E3005CBD95 /* libfmod.dylib */; };
+		2216A79F1B4F0BEF005CBD95 /* libfmodL.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 2216A7761B4F00E3005CBD95 /* libfmodL.dylib */; };
+		2216A7A01B4F0BF1005CBD95 /* libfmodstudio.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 2216A7731B4F00D5005CBD95 /* libfmodstudio.dylib */; };
+		2216A7A11B4F0BF3005CBD95 /* libfmodstudioL.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 2216A7741B4F00D5005CBD95 /* libfmodstudioL.dylib */; };
 		666E40F00B67D87F005B491F /* macutils.mm in Sources */ = {isa = PBXBuildFile; fileRef = 666E40EF0B67D87F005B491F /* macutils.mm */; };
 		B90ADD4509B344D800A5B00B /* callbacks.c in Sources */ = {isa = PBXBuildFile; fileRef = B90ADD0009B344D800A5B00B /* callbacks.c */; };
 		B90ADD5709B344D800A5B00B /* host.c in Sources */ = {isa = PBXBuildFile; fileRef = B90ADD1309B344D800A5B00B /* host.c */; };
@@ -94,6 +114,8 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
+				2216A7771B4F00E3005CBD95 /* libfmod.dylib in CopyFiles */,
+				2216A7781B4F00E3005CBD95 /* libfmodL.dylib in CopyFiles */,
 				D1ECAD2C112921BA00F58615 /* SDL.framework in CopyFiles */,
 				D1ECAD2D112921BA00F58615 /* SDL_mixer.framework in CopyFiles */,
 				D1ECAD2E112921BA00F58615 /* SDL_image.framework in CopyFiles */,
@@ -105,6 +127,49 @@
 /* Begin PBXFileReference section */
 		089C165DFE840E0CC02AAC07 /* English */ = {isa = PBXFileReference; fileEncoding = 10; lastKnownFileType = text.plist.strings; name = English; path = English.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = /System/Library/Frameworks/Cocoa.framework; sourceTree = "<absolute>"; };
+		2216A75B1B4EF92D005CBD95 /* 640148main_APU Shutdown.ogg */ = {isa = PBXFileReference; lastKnownFileType = file; path = "640148main_APU Shutdown.ogg"; sourceTree = "<group>"; };
+		2216A75C1B4EF92D005CBD95 /* 640165main_Lookin At It.ogg */ = {isa = PBXFileReference; lastKnownFileType = file; path = "640165main_Lookin At It.ogg"; sourceTree = "<group>"; };
+		2216A75D1B4EF92D005CBD95 /* 640166main_MECO.ogg */ = {isa = PBXFileReference; lastKnownFileType = file; path = 640166main_MECO.ogg; sourceTree = "<group>"; };
+		2216A75E1B4EF92D005CBD95 /* 640169main_Press to ATO.ogg */ = {isa = PBXFileReference; lastKnownFileType = file; path = "640169main_Press to ATO.ogg"; sourceTree = "<group>"; };
+		2216A75F1B4EF92D005CBD95 /* Character.bank */ = {isa = PBXFileReference; lastKnownFileType = file; path = Character.bank; sourceTree = "<group>"; };
+		2216A7601B4EF92D005CBD95 /* Master Bank.bank */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Master Bank.bank"; sourceTree = "<group>"; };
+		2216A7611B4EF92D005CBD95 /* Master Bank.strings.bank */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Master Bank.strings.bank"; sourceTree = "<group>"; };
+		2216A7621B4EF92D005CBD95 /* Music.bank */ = {isa = PBXFileReference; lastKnownFileType = file; path = Music.bank; sourceTree = "<group>"; };
+		2216A7631B4EF92D005CBD95 /* Surround_Ambience.bank */ = {isa = PBXFileReference; lastKnownFileType = file; path = Surround_Ambience.bank; sourceTree = "<group>"; };
+		2216A7641B4EF92D005CBD95 /* UI_Menu.bank */ = {isa = PBXFileReference; lastKnownFileType = file; path = UI_Menu.bank; sourceTree = "<group>"; };
+		2216A7651B4EF92D005CBD95 /* Vehicles.bank */ = {isa = PBXFileReference; lastKnownFileType = file; path = Vehicles.bank; sourceTree = "<group>"; };
+		2216A7661B4EF92D005CBD95 /* Weapons.bank */ = {isa = PBXFileReference; lastKnownFileType = file; path = Weapons.bank; sourceTree = "<group>"; };
+		2216A7731B4F00D5005CBD95 /* libfmodstudio.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libfmodstudio.dylib; path = ../../FMOD_Programmers_API/api/studio/lib/libfmodstudio.dylib; sourceTree = "<group>"; };
+		2216A7741B4F00D5005CBD95 /* libfmodstudioL.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libfmodstudioL.dylib; path = ../../FMOD_Programmers_API/api/studio/lib/libfmodstudioL.dylib; sourceTree = "<group>"; };
+		2216A7751B4F00E3005CBD95 /* libfmod.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libfmod.dylib; path = ../../FMOD_Programmers_API/api/lowlevel/lib/libfmod.dylib; sourceTree = "<group>"; };
+		2216A7761B4F00E3005CBD95 /* libfmodL.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libfmodL.dylib; path = ../../FMOD_Programmers_API/api/lowlevel/lib/libfmodL.dylib; sourceTree = "<group>"; };
+		2216A77A1B4F0108005CBD95 /* 640148main_APU Shutdown.ogg */ = {isa = PBXFileReference; lastKnownFileType = file; path = "640148main_APU Shutdown.ogg"; sourceTree = "<group>"; };
+		2216A77B1B4F0108005CBD95 /* 640165main_Lookin At It.ogg */ = {isa = PBXFileReference; lastKnownFileType = file; path = "640165main_Lookin At It.ogg"; sourceTree = "<group>"; };
+		2216A77C1B4F0108005CBD95 /* 640166main_MECO.ogg */ = {isa = PBXFileReference; lastKnownFileType = file; path = 640166main_MECO.ogg; sourceTree = "<group>"; };
+		2216A77D1B4F0108005CBD95 /* 640169main_Press to ATO.ogg */ = {isa = PBXFileReference; lastKnownFileType = file; path = "640169main_Press to ATO.ogg"; sourceTree = "<group>"; };
+		2216A77E1B4F0108005CBD95 /* Character.bank */ = {isa = PBXFileReference; lastKnownFileType = file; path = Character.bank; sourceTree = "<group>"; };
+		2216A77F1B4F0108005CBD95 /* Master Bank.bank */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Master Bank.bank"; sourceTree = "<group>"; };
+		2216A7801B4F0108005CBD95 /* Master Bank.strings.bank */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Master Bank.strings.bank"; sourceTree = "<group>"; };
+		2216A7811B4F0108005CBD95 /* Music.bank */ = {isa = PBXFileReference; lastKnownFileType = file; path = Music.bank; sourceTree = "<group>"; };
+		2216A7821B4F0108005CBD95 /* Surround_Ambience.bank */ = {isa = PBXFileReference; lastKnownFileType = file; path = Surround_Ambience.bank; sourceTree = "<group>"; };
+		2216A7831B4F0108005CBD95 /* UI_Menu.bank */ = {isa = PBXFileReference; lastKnownFileType = file; path = UI_Menu.bank; sourceTree = "<group>"; };
+		2216A7841B4F0108005CBD95 /* Vehicles.bank */ = {isa = PBXFileReference; lastKnownFileType = file; path = Vehicles.bank; sourceTree = "<group>"; };
+		2216A7851B4F0108005CBD95 /* Weapons.bank */ = {isa = PBXFileReference; lastKnownFileType = file; path = Weapons.bank; sourceTree = "<group>"; };
+		2216A7981B4F0332005CBD95 /* common_platform.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = common_platform.h; sourceTree = "<group>"; };
+		2216A7991B4F0332005CBD95 /* common_platform.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = common_platform.mm; sourceTree = "<group>"; };
+		2216A79A1B4F0332005CBD95 /* common.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = common.cpp; sourceTree = "<group>"; };
+		2216A79B1B4F0332005CBD95 /* common.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = common.h; sourceTree = "<group>"; };
+		2216A7A21B4F0C76005CBD95 /* fmod_codec.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = fmod_codec.h; sourceTree = "<group>"; };
+		2216A7A31B4F0C76005CBD95 /* fmod_common.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = fmod_common.h; sourceTree = "<group>"; };
+		2216A7A41B4F0C76005CBD95 /* fmod_dsp_effects.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = fmod_dsp_effects.h; sourceTree = "<group>"; };
+		2216A7A51B4F0C76005CBD95 /* fmod_dsp.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = fmod_dsp.h; sourceTree = "<group>"; };
+		2216A7A61B4F0C76005CBD95 /* fmod_errors.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = fmod_errors.h; sourceTree = "<group>"; };
+		2216A7A71B4F0C76005CBD95 /* fmod_output.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = fmod_output.h; sourceTree = "<group>"; };
+		2216A7A81B4F0C76005CBD95 /* fmod.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = fmod.h; sourceTree = "<group>"; };
+		2216A7A91B4F0C76005CBD95 /* fmod.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = fmod.hpp; sourceTree = "<group>"; };
+		2216A7AA1B4F0C80005CBD95 /* fmod_studio_common.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = fmod_studio_common.h; sourceTree = "<group>"; };
+		2216A7AB1B4F0C80005CBD95 /* fmod_studio.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = fmod_studio.h; sourceTree = "<group>"; };
+		2216A7AC1B4F0C80005CBD95 /* fmod_studio.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = fmod_studio.hpp; sourceTree = "<group>"; };
 		29B97324FDCFA39411CA2CEA /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = /System/Library/Frameworks/AppKit.framework; sourceTree = "<absolute>"; };
 		29B97325FDCFA39411CA2CEA /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = /System/Library/Frameworks/Foundation.framework; sourceTree = "<absolute>"; };
 		666E40EF0B67D87F005B491F /* macutils.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = macutils.mm; sourceTree = "<group>"; };
@@ -238,6 +303,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				B94198C309207E810029DAD1 /* Cocoa.framework in Frameworks */,
+				2216A79F1B4F0BEF005CBD95 /* libfmodL.dylib in Frameworks */,
+				2216A79E1B4F0BED005CBD95 /* libfmod.dylib in Frameworks */,
+				2216A7A01B4F0BF1005CBD95 /* libfmodstudio.dylib in Frameworks */,
+				2216A7A11B4F0BF3005CBD95 /* libfmodstudioL.dylib in Frameworks */,
 				B94198C409207E810029DAD1 /* OpenGL.framework in Frameworks */,
 				D1ECACF71129213900F58615 /* SDL.framework in Frameworks */,
 				D1ECACF81129213900F58615 /* SDL_mixer.framework in Frameworks */,
@@ -288,9 +357,75 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
+		2216A75A1B4EF92D005CBD95 /* media */ = {
+			isa = PBXGroup;
+			children = (
+				2216A75B1B4EF92D005CBD95 /* 640148main_APU Shutdown.ogg */,
+				2216A75C1B4EF92D005CBD95 /* 640165main_Lookin At It.ogg */,
+				2216A75D1B4EF92D005CBD95 /* 640166main_MECO.ogg */,
+				2216A75E1B4EF92D005CBD95 /* 640169main_Press to ATO.ogg */,
+				2216A75F1B4EF92D005CBD95 /* Character.bank */,
+				2216A7601B4EF92D005CBD95 /* Master Bank.bank */,
+				2216A7611B4EF92D005CBD95 /* Master Bank.strings.bank */,
+				2216A7621B4EF92D005CBD95 /* Music.bank */,
+				2216A7631B4EF92D005CBD95 /* Surround_Ambience.bank */,
+				2216A7641B4EF92D005CBD95 /* UI_Menu.bank */,
+				2216A7651B4EF92D005CBD95 /* Vehicles.bank */,
+				2216A7661B4EF92D005CBD95 /* Weapons.bank */,
+			);
+			path = media;
+			sourceTree = "<group>";
+		};
+		2216A7691B4EF9C1005CBD95 /* common */ = {
+			isa = PBXGroup;
+			children = (
+				2216A7AA1B4F0C80005CBD95 /* fmod_studio_common.h */,
+				2216A7AB1B4F0C80005CBD95 /* fmod_studio.h */,
+				2216A7AC1B4F0C80005CBD95 /* fmod_studio.hpp */,
+				2216A7A21B4F0C76005CBD95 /* fmod_codec.h */,
+				2216A7A31B4F0C76005CBD95 /* fmod_common.h */,
+				2216A7A41B4F0C76005CBD95 /* fmod_dsp_effects.h */,
+				2216A7A51B4F0C76005CBD95 /* fmod_dsp.h */,
+				2216A7A61B4F0C76005CBD95 /* fmod_errors.h */,
+				2216A7A71B4F0C76005CBD95 /* fmod_output.h */,
+				2216A7A81B4F0C76005CBD95 /* fmod.h */,
+				2216A7A91B4F0C76005CBD95 /* fmod.hpp */,
+				2216A7981B4F0332005CBD95 /* common_platform.h */,
+				2216A7991B4F0332005CBD95 /* common_platform.mm */,
+				2216A79A1B4F0332005CBD95 /* common.cpp */,
+				2216A79B1B4F0332005CBD95 /* common.h */,
+			);
+			name = common;
+			sourceTree = "<group>";
+		};
+		2216A7791B4F0108005CBD95 /* media */ = {
+			isa = PBXGroup;
+			children = (
+				2216A77A1B4F0108005CBD95 /* 640148main_APU Shutdown.ogg */,
+				2216A77B1B4F0108005CBD95 /* 640165main_Lookin At It.ogg */,
+				2216A77C1B4F0108005CBD95 /* 640166main_MECO.ogg */,
+				2216A77D1B4F0108005CBD95 /* 640169main_Press to ATO.ogg */,
+				2216A77E1B4F0108005CBD95 /* Character.bank */,
+				2216A77F1B4F0108005CBD95 /* Master Bank.bank */,
+				2216A7801B4F0108005CBD95 /* Master Bank.strings.bank */,
+				2216A7811B4F0108005CBD95 /* Music.bank */,
+				2216A7821B4F0108005CBD95 /* Surround_Ambience.bank */,
+				2216A7831B4F0108005CBD95 /* UI_Menu.bank */,
+				2216A7841B4F0108005CBD95 /* Vehicles.bank */,
+				2216A7851B4F0108005CBD95 /* Weapons.bank */,
+			);
+			path = media;
+			sourceTree = "<group>";
+		};
 		29B97314FDCFA39411CA2CEA /* sauerbraten */ = {
 			isa = PBXGroup;
 			children = (
+				2216A7751B4F00E3005CBD95 /* libfmod.dylib */,
+				2216A7761B4F00E3005CBD95 /* libfmodL.dylib */,
+				2216A7731B4F00D5005CBD95 /* libfmodstudio.dylib */,
+				2216A7741B4F00D5005CBD95 /* libfmodstudioL.dylib */,
+				2216A7691B4EF9C1005CBD95 /* common */,
+				2216A75A1B4EF92D005CBD95 /* media */,
 				080E96DDFE201D6D7F000001 /* Classes */,
 				29B97315FDCFA39411CA2CEA /* Other Sources */,
 				29B97317FDCFA39411CA2CEA /* Resources */,
@@ -315,6 +450,7 @@
 		29B97317FDCFA39411CA2CEA /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				2216A7791B4F0108005CBD95 /* media */,
 				D1AB44FB0E245F7A00B5D3A5 /* help */,
 				B930D0D10A3DA92300BDFB85 /* Maps.icns */,
 				B9CACA12092099DF00A13F04 /* sauerbraten.plist */,
@@ -541,7 +677,19 @@
 				D1E605B90E2416150045244E /* sauerbraten.icns in Resources */,
 				D10F2F73111E240F0004BCB9 /* InfoPlist.strings in Resources */,
 				D10F2F74111E240F0004BCB9 /* Maps.icns in Resources */,
+				2216A7891B4F0108005CBD95 /* 640169main_Press to ATO.ogg in Resources */,
+				2216A78E1B4F0108005CBD95 /* Surround_Ambience.bank in Resources */,
+				2216A78D1B4F0108005CBD95 /* Music.bank in Resources */,
+				2216A78B1B4F0108005CBD95 /* Master Bank.bank in Resources */,
+				2216A78C1B4F0108005CBD95 /* Master Bank.strings.bank in Resources */,
 				D10F2F78111E240F0004BCB9 /* help in Resources */,
+				2216A7901B4F0108005CBD95 /* Vehicles.bank in Resources */,
+				2216A7881B4F0108005CBD95 /* 640166main_MECO.ogg in Resources */,
+				2216A78F1B4F0108005CBD95 /* UI_Menu.bank in Resources */,
+				2216A78A1B4F0108005CBD95 /* Character.bank in Resources */,
+				2216A7861B4F0108005CBD95 /* 640148main_APU Shutdown.ogg in Resources */,
+				2216A7911B4F0108005CBD95 /* Weapons.bank in Resources */,
+				2216A7871B4F0108005CBD95 /* 640165main_Lookin At It.ogg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -633,6 +781,8 @@
 				D1D040DA0F830C350043BA95 /* movie.cpp in Sources */,
 				D10F2F54111E23680004BCB9 /* Launcher.m in Sources */,
 				D10F2F55111E236C0004BCB9 /* main.m in Sources */,
+				2216A79C1B4F0332005CBD95 /* common_platform.mm in Sources */,
+				2216A79D1B4F0332005CBD95 /* common.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -670,6 +820,7 @@
 				FRAMEWORK_SEARCH_PATHS_QUOTED_FOR_TARGET_1 = "\"$(SRCROOT)/Frameworks\"";
 				FRAMEWORK_SEARCH_PATHS_QUOTED_FOR_TARGET_2 = "\"$(SRCROOT)\"";
 				FRAMEWORK_SEARCH_PATHS_QUOTED_FOR_TARGET_3 = "\"$(SRCROOT)/Frameworks\"";
+				GCC_INPUT_FILETYPE = automatic;
 				GCC_PRECOMPILE_PREFIX_HEADER = NO;
 				GCC_PREPROCESSOR_DEFINITIONS = HAS_SOCKLEN_T;
 				HEADER_SEARCH_PATHS = (
@@ -679,9 +830,19 @@
 					../../FMOD_Programmers_API/api/studio/inc,
 				);
 				INFOPLIST_FILE = sauerbraten.plist;
-				LD_RUNPATH_SEARCH_PATHS = "@executable_path/../Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "@loader_path/../Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					../../FMOD_Programmers_API/api/studio/lib,
+					../../FMOD_Programmers_API/api/lowlevel/lib,
+					/Users/Sam/Documents/git_repo/cube/FMOD_Programmers_API/api/lowlevel/lib,
+					/Users/Sam/Documents/git_repo/cube/FMOD_Programmers_API/api/studio/lib,
+				);
 				MACOSX_DEPLOYMENT_TARGET = 10.5;
-				OTHER_LDFLAGS = "-lz";
+				OTHER_LDFLAGS = (
+					"-lz",
+					../../FMOD_Programmers_API/studio/lib/libfmodL.dylib,
+					../../FMOD_Programmers_API/lowlevel/lib/libfmodL.dylib,
+				);
 				PRODUCT_NAME = sauerbraten;
 			};
 			name = Debug;
@@ -698,6 +859,7 @@
 				FRAMEWORK_SEARCH_PATHS_QUOTED_FOR_TARGET_1 = "\"$(SRCROOT)/Frameworks\"";
 				FRAMEWORK_SEARCH_PATHS_QUOTED_FOR_TARGET_2 = "\"$(SRCROOT)\"";
 				FRAMEWORK_SEARCH_PATHS_QUOTED_FOR_TARGET_3 = "\"$(SRCROOT)/Frameworks\"";
+				GCC_INPUT_FILETYPE = automatic;
 				GCC_PRECOMPILE_PREFIX_HEADER = NO;
 				GCC_PREPROCESSOR_DEFINITIONS = HAS_SOCKLEN_T;
 				HEADER_SEARCH_PATHS = (
@@ -707,13 +869,23 @@
 					../../FMOD_Programmers_API/api/studio/inc,
 				);
 				INFOPLIST_FILE = sauerbraten.plist;
-				LD_RUNPATH_SEARCH_PATHS = "@executable_path/../Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "@loader_path/../Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					../../FMOD_Programmers_API/api/studio/lib,
+					../../FMOD_Programmers_API/api/lowlevel/lib,
+					/Users/Sam/Documents/git_repo/cube/FMOD_Programmers_API/api/lowlevel/lib,
+					/Users/Sam/Documents/git_repo/cube/FMOD_Programmers_API/api/studio/lib,
+				);
 				MACOSX_DEPLOYMENT_TARGET = 10.5;
 				OTHER_CPLUSPLUSFLAGS = (
 					"$(OTHER_CFLAGS)",
 					"-fomit-frame-pointer",
 				);
-				OTHER_LDFLAGS = "-lz";
+				OTHER_LDFLAGS = (
+					"-lz",
+					../../FMOD_Programmers_API/studio/lib/libfmod.dylib,
+					../../FMOD_Programmers_API/lowlevel/lib/libfmod.dylib,
+				);
 				PRODUCT_NAME = sauerbraten;
 			};
 			name = Release;
@@ -730,6 +902,7 @@
 				FRAMEWORK_SEARCH_PATHS_QUOTED_FOR_TARGET_1 = "\"$(SRCROOT)/Frameworks\"";
 				FRAMEWORK_SEARCH_PATHS_QUOTED_FOR_TARGET_2 = "\"$(SRCROOT)\"";
 				FRAMEWORK_SEARCH_PATHS_QUOTED_FOR_TARGET_3 = "\"$(SRCROOT)/Frameworks\"";
+				GCC_INPUT_FILETYPE = automatic;
 				GCC_PRECOMPILE_PREFIX_HEADER = NO;
 				GCC_PREPROCESSOR_DEFINITIONS = HAS_SOCKLEN_T;
 				HEADER_SEARCH_PATHS = (
@@ -739,13 +912,23 @@
 					../../FMOD_Programmers_API/api/studio/inc,
 				);
 				INFOPLIST_FILE = sauerbraten.plist;
-				LD_RUNPATH_SEARCH_PATHS = "@executable_path/../Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "@loader_path/../Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					../../FMOD_Programmers_API/api/studio/lib,
+					../../FMOD_Programmers_API/api/lowlevel/lib,
+					/Users/Sam/Documents/git_repo/cube/FMOD_Programmers_API/api/lowlevel/lib,
+					/Users/Sam/Documents/git_repo/cube/FMOD_Programmers_API/api/studio/lib,
+				);
 				MACOSX_DEPLOYMENT_TARGET = 10.5;
 				OTHER_CPLUSPLUSFLAGS = (
 					"$(OTHER_CFLAGS)",
 					"-fomit-frame-pointer",
 				);
-				OTHER_LDFLAGS = "-lz";
+				OTHER_LDFLAGS = (
+					"-lz",
+					../../FMOD_Programmers_API/studio/lib/libfmodL.dylib,
+					../../FMOD_Programmers_API/lowlevel/lib/libfmodL.dylib,
+				);
 				PRODUCT_NAME = sauerbraten;
 			};
 			name = "Release-Deployment";
@@ -754,40 +937,58 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
-				COPY_PHASE_STRIP = NO;
-				DEPLOYMENT_POSTPROCESSING = YES;
+				COPY_PHASE_STRIP = YES;
+				DEPLOYMENT_POSTPROCESSING = NO;
 				ENABLE_OPENMP_SUPPORT = NO;
 				GCC_ENABLE_CPP_EXCEPTIONS = NO;
 				GCC_OPTIMIZATION_LEVEL = 3;
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
 					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
+					../../FMOD_Programmers_API/api/studio/inc,
+					../../FMOD_Programmers_API/api/lowlevel/inc,
+				);
+				LD_RUNPATH_SEARCH_PATHS = "@loader_path/../Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					../../FMOD_Programmers_API/api/lowlevel/lib,
+					../../FMOD_Programmers_API/api/studio/lib,
 				);
 				MACOSX_DEPLOYMENT_TARGET = 10.5;
+				ONLY_ACTIVE_ARCH = NO;
 				OTHER_CPLUSPLUSFLAGS = "$(OTHER_CFLAGS)";
-				STRIP_INSTALLED_PRODUCT = NO;
+				SDKROOT = macosx;
+				STRIP_INSTALLED_PRODUCT = YES;
 			};
 			name = "Release-Deployment";
 		};
 		B960CF36085F3CC7004FB142 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = "$(NATIVE_ARCH_ACTUAL)";
-				COPY_PHASE_STRIP = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
+				COPY_PHASE_STRIP = YES;
 				ENABLE_OPENMP_SUPPORT = NO;
 				GCC_ENABLE_CPP_EXCEPTIONS = NO;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
 					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
+					../../FMOD_Programmers_API/api/studio/inc,
+					../../FMOD_Programmers_API/api/lowlevel/inc,
+				);
+				LD_RUNPATH_SEARCH_PATHS = "@loader_path/../Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					../../FMOD_Programmers_API/api/lowlevel/lib,
+					../../FMOD_Programmers_API/api/studio/lib,
 				);
 				MACOSX_DEPLOYMENT_TARGET = 10.5;
+				ONLY_ACTIVE_ARCH = YES;
 				OTHER_CPLUSPLUSFLAGS = "$(OTHER_CFLAGS)";
 				OTHER_LDFLAGS = (
 					../../FMOD_Programmers_API/api/lowlevel/lib/libfmodL.dylib,
 					../../FMOD_Programmers_API/api/studio/lib/libfmodstudioL.dylib,
 				);
-				STRIP_INSTALLED_PRODUCT = NO;
+				SDKROOT = macosx;
+				STRIP_INSTALLED_PRODUCT = YES;
 				VALID_ARCHS = "i386 ppc ppc64 ppc7400 ppc970 x86_64";
 			};
 			name = Debug;
@@ -796,21 +997,30 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
-				COPY_PHASE_STRIP = NO;
+				COPY_PHASE_STRIP = YES;
 				ENABLE_OPENMP_SUPPORT = NO;
 				GCC_ENABLE_CPP_EXCEPTIONS = NO;
 				GCC_OPTIMIZATION_LEVEL = 3;
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
 					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
+					../../FMOD_Programmers_API/api/studio/inc,
+					../../FMOD_Programmers_API/api/lowlevel/inc,
+				);
+				LD_RUNPATH_SEARCH_PATHS = "@loader_path/../Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					../../FMOD_Programmers_API/api/lowlevel/lib,
+					../../FMOD_Programmers_API/api/studio/lib,
 				);
 				MACOSX_DEPLOYMENT_TARGET = 10.5;
+				ONLY_ACTIVE_ARCH = NO;
 				OTHER_CPLUSPLUSFLAGS = "$(OTHER_CFLAGS)";
 				OTHER_LDFLAGS = (
 					../../FMOD_Programmers_API/api/lowlevel/lib/libfmod.dylib,
 					../../FMOD_Programmers_API/api/studio/lib/libfmodstudio.dylib,
 				);
-				STRIP_INSTALLED_PRODUCT = NO;
+				SDKROOT = macosx;
+				STRIP_INSTALLED_PRODUCT = YES;
 				VALID_ARCHS = "i386 ppc ppc64 ppc7400 ppc970 x86_64";
 			};
 			name = Release;

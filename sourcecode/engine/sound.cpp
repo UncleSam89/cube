@@ -1,10 +1,11 @@
 // sound.cpp: basic positional sound using sdl_mixer
 
 #include "engine.h"
-#include "fmod_studio.hpp"
 #include "fmod.hpp"
+#include "fmod_studio.hpp"
 #include "common.h"
 #include "SDL_mixer.h"
+
 #define MAXVOL MIX_MAX_VOLUME
 
 bool nosound = true;
@@ -40,6 +41,15 @@ struct soundconfig
     {
         return numslots > 1 ? slots + rnd(numslots) : slots;
     }
+
+    
+    void *extraDriverData = NULL;
+    Common_Init(&extraDriverData);
+
+    
+    FMOD::Studio::System* system = NULL;
+    ERRCHECK( FMOD::Studio::System::create(&system) );
+    
 };
 
 struct soundchannel

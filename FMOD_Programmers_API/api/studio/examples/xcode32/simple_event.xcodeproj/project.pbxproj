@@ -229,7 +229,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				COMBINE_HIDPI_IMAGES = YES;
-				GCC_INPUT_FILETYPE = automatic;
 			};
 			name = Debug;
 		};
@@ -237,7 +236,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				COMBINE_HIDPI_IMAGES = YES;
-				GCC_INPUT_FILETYPE = automatic;
 			};
 			name = Release;
 		};

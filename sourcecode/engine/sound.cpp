@@ -1,13 +1,12 @@
 // sound.cpp: basic positional sound using sdl_mixer
 
 #include "engine.h"
-#include "fmod_studio.hpp"
-#include "fmod.hpp"
-#include "common.h"
 #include "SDL_mixer.h"
+#include "FMODbridge.h"
 #define MAXVOL MIX_MAX_VOLUME
 
 bool nosound = true;
+FMODbridge *FMODB;
 
 struct soundsample
 {
@@ -159,6 +158,8 @@ VARF(soundbufferlen, 128, 1024, 4096, initwarning("sound configuration", INIT_RE
 
 void initsound()
 {
+    FMODB = new FMODbridge();
+    
     if(Mix_OpenAudio(soundfreq, MIX_DEFAULT_FORMAT, 2, soundbufferlen)<0)
     {
         nosound = true;
@@ -204,6 +205,11 @@ Mix_Music *loadmusic(const char *name)
  
 void startmusic(char *name, char *cmd)
 {
+    
+    printf("START MUSIC %s\n",name);
+    
+    FMODB->playOST();
+    /*
     if(nosound) return;
     stopmusic();
     if(soundvol && musicvol && *name)
@@ -216,8 +222,8 @@ void startmusic(char *name, char *cmd)
             DELETEA(musicdonecmd);
             musicfile = newstring(file);
             if(cmd[0]) musicdonecmd = newstring(cmd);
-            Mix_PlayMusic(music, cmd[0] ? 0 : -1);
-            Mix_VolumeMusic((musicvol*MAXVOL)/255);
+            //Mix_PlayMusic(music, cmd[0] ? 0 : -1);
+            //Mix_VolumeMusic((musicvol*MAXVOL)/255);
             intret(1);
         }
         else
@@ -226,6 +232,7 @@ void startmusic(char *name, char *cmd)
             intret(0); 
         }
     }
+     */
 }
 
 COMMANDN(music, startmusic, "ss");
@@ -510,7 +517,10 @@ void preloadmapsounds()
 int playsound(int n, const vec *loc, extentity *ent, int flags, int loops, int fade, int chanid, int radius, int expire)
 {
     if(nosound || !soundvol || minimized) return -1;
-
+    
+    FMODB->playSound();
+    return n;
+    
     vector<soundslot> &slots = ent || flags&SND_MAP ? mapslots : gameslots;
     vector<soundconfig> &sounds = ent || flags&SND_MAP ? mapsounds : gamesounds;
     if(!sounds.inrange(n)) { conoutf(CON_WARN, "unregistered sound: %d", n); return -1; }
@@ -561,6 +571,7 @@ int playsound(int n, const vec *loc, extentity *ent, int flags, int loops, int f
     soundslot &slot = slots[config.chooseslot()];
     if(!slot.sample->chunk && !loadsoundslot(slot)) return -1;
 
+    dbgsound = 1;
     if(dbgsound) conoutf("sound: %s", slot.sample->name);
  
     chanid = -1;
@@ -587,7 +598,9 @@ int playsound(int n, const vec *loc, extentity *ent, int flags, int loops, int f
     if(playing >= 0) syncchannel(chan); 
     else freechannel(chanid);
     SDL_UnlockAudio();
+
     return playing;
+    
 }
 
 void stopsounds()
@@ -612,7 +625,9 @@ bool stopsound(int n, int chanid, int fade)
 }
 
 int playsoundname(const char *s, const vec *loc, int vol, int flags, int loops, int fade, int chanid, int radius, int expire) 
-{ 
+{
+    
+    printf("PLAY SOUND %s\n",s);
     if(!vol) vol = 100;
     int id = findsound(s, vol, gamesounds, gameslots);
     if(id < 0) id = addsound(s, vol, 0, gamesounds, gameslots);

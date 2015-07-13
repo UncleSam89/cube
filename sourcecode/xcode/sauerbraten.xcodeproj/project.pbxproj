@@ -7,6 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		22A369D61B5035E700AC62D7 /* common_platform.mm in Sources */ = {isa = PBXBuildFile; fileRef = 22A369D31B5035E700AC62D7 /* common_platform.mm */; };
+		22A369D71B5035E700AC62D7 /* common.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 22A369D41B5035E700AC62D7 /* common.cpp */; };
+		22A369DF1B5301AF00AC62D7 /* libfmodstudio.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 22A369CE1B50356300AC62D7 /* libfmodstudio.dylib */; };
+		22A369E01B5301B100AC62D7 /* libfmodstudioL.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 22A369CF1B50356300AC62D7 /* libfmodstudioL.dylib */; };
+		22A369E11B5301B400AC62D7 /* libfmod.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 22A369CA1B50353F00AC62D7 /* libfmod.dylib */; };
+		22A369E21B5301C000AC62D7 /* libfmodL.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 22A369CB1B50353F00AC62D7 /* libfmodL.dylib */; };
+		22A36A011B5305D500AC62D7 /* media in Resources */ = {isa = PBXBuildFile; fileRef = 22A36A001B5305D500AC62D7 /* media */; };
+		22A36A041B53136400AC62D7 /* FMODbridge.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 22A36A021B53136400AC62D7 /* FMODbridge.cpp */; };
 		666E40F00B67D87F005B491F /* macutils.mm in Sources */ = {isa = PBXBuildFile; fileRef = 666E40EF0B67D87F005B491F /* macutils.mm */; };
 		B90ADD4509B344D800A5B00B /* callbacks.c in Sources */ = {isa = PBXBuildFile; fileRef = B90ADD0009B344D800A5B00B /* callbacks.c */; };
 		B90ADD5709B344D800A5B00B /* host.c in Sources */ = {isa = PBXBuildFile; fileRef = B90ADD1309B344D800A5B00B /* host.c */; };
@@ -82,22 +90,23 @@
 		D1ECACF71129213900F58615 /* SDL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D1ECACF41129213900F58615 /* SDL.framework */; };
 		D1ECACF81129213900F58615 /* SDL_mixer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D1ECACF51129213900F58615 /* SDL_mixer.framework */; };
 		D1ECACF91129213900F58615 /* SDL_image.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D1ECACF61129213900F58615 /* SDL_image.framework */; };
-		D1ECAD2C112921BA00F58615 /* SDL.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = D1ECACF41129213900F58615 /* SDL.framework */; };
-		D1ECAD2D112921BA00F58615 /* SDL_mixer.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = D1ECACF51129213900F58615 /* SDL_mixer.framework */; };
-		D1ECAD2E112921BA00F58615 /* SDL_image.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = D1ECACF61129213900F58615 /* SDL_image.framework */; };
+		D1ECAD2C112921BA00F58615 /* SDL.framework in Copy Files */ = {isa = PBXBuildFile; fileRef = D1ECACF41129213900F58615 /* SDL.framework */; };
+		D1ECAD2D112921BA00F58615 /* SDL_mixer.framework in Copy Files */ = {isa = PBXBuildFile; fileRef = D1ECACF51129213900F58615 /* SDL_mixer.framework */; };
+		D1ECAD2E112921BA00F58615 /* SDL_image.framework in Copy Files */ = {isa = PBXBuildFile; fileRef = D1ECACF61129213900F58615 /* SDL_image.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
-		B9D19B900FB4C8150020B7FC /* CopyFiles */ = {
+		B9D19B900FB4C8150020B7FC /* Copy Files */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				D1ECAD2C112921BA00F58615 /* SDL.framework in CopyFiles */,
-				D1ECAD2D112921BA00F58615 /* SDL_mixer.framework in CopyFiles */,
-				D1ECAD2E112921BA00F58615 /* SDL_image.framework in CopyFiles */,
+				D1ECAD2C112921BA00F58615 /* SDL.framework in Copy Files */,
+				D1ECAD2D112921BA00F58615 /* SDL_mixer.framework in Copy Files */,
+				D1ECAD2E112921BA00F58615 /* SDL_image.framework in Copy Files */,
 			);
+			name = "Copy Files";
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXCopyFilesBuildPhase section */
@@ -105,6 +114,33 @@
 /* Begin PBXFileReference section */
 		089C165DFE840E0CC02AAC07 /* English */ = {isa = PBXFileReference; fileEncoding = 10; lastKnownFileType = text.plist.strings; name = English; path = English.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = /System/Library/Frameworks/Cocoa.framework; sourceTree = "<absolute>"; };
+		22A369CA1B50353F00AC62D7 /* libfmod.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libfmod.dylib; path = ../FMOD_Programmers_API/api/lowlevel/lib/libfmod.dylib; sourceTree = "<group>"; };
+		22A369CB1B50353F00AC62D7 /* libfmodL.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libfmodL.dylib; path = ../FMOD_Programmers_API/api/lowlevel/lib/libfmodL.dylib; sourceTree = "<group>"; };
+		22A369CE1B50356300AC62D7 /* libfmodstudio.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libfmodstudio.dylib; path = ../FMOD_Programmers_API/api/studio/lib/libfmodstudio.dylib; sourceTree = "<group>"; };
+		22A369CF1B50356300AC62D7 /* libfmodstudioL.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libfmodstudioL.dylib; path = ../FMOD_Programmers_API/api/studio/lib/libfmodstudioL.dylib; sourceTree = "<group>"; };
+		22A369D21B5035E700AC62D7 /* common_platform.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = common_platform.h; sourceTree = SOURCE_ROOT; };
+		22A369D31B5035E700AC62D7 /* common_platform.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = common_platform.mm; sourceTree = SOURCE_ROOT; };
+		22A369D41B5035E700AC62D7 /* common.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = common.cpp; sourceTree = SOURCE_ROOT; };
+		22A369D51B5035E700AC62D7 /* common.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = common.h; sourceTree = SOURCE_ROOT; };
+		22A369E31B53022100AC62D7 /* libfmod.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; path = libfmod.dylib; sourceTree = "<group>"; };
+		22A369E41B53022100AC62D7 /* libfmodL.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; path = libfmodL.dylib; sourceTree = "<group>"; };
+		22A369E51B53023B00AC62D7 /* libfmodstudio.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; path = libfmodstudio.dylib; sourceTree = "<group>"; };
+		22A369E61B53023B00AC62D7 /* libfmodstudioL.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; path = libfmodstudioL.dylib; sourceTree = "<group>"; };
+		22A369E81B53055600AC62D7 /* 640148main_APU Shutdown.ogg */ = {isa = PBXFileReference; lastKnownFileType = file; path = "640148main_APU Shutdown.ogg"; sourceTree = "<group>"; };
+		22A369E91B53055600AC62D7 /* 640165main_Lookin At It.ogg */ = {isa = PBXFileReference; lastKnownFileType = file; path = "640165main_Lookin At It.ogg"; sourceTree = "<group>"; };
+		22A369EA1B53055600AC62D7 /* 640166main_MECO.ogg */ = {isa = PBXFileReference; lastKnownFileType = file; path = 640166main_MECO.ogg; sourceTree = "<group>"; };
+		22A369EB1B53055600AC62D7 /* 640169main_Press to ATO.ogg */ = {isa = PBXFileReference; lastKnownFileType = file; path = "640169main_Press to ATO.ogg"; sourceTree = "<group>"; };
+		22A369EC1B53055600AC62D7 /* Character.bank */ = {isa = PBXFileReference; lastKnownFileType = file; path = Character.bank; sourceTree = "<group>"; };
+		22A369ED1B53055600AC62D7 /* Master Bank.bank */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Master Bank.bank"; sourceTree = "<group>"; };
+		22A369EE1B53055600AC62D7 /* Master Bank.strings.bank */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Master Bank.strings.bank"; sourceTree = "<group>"; };
+		22A369EF1B53055600AC62D7 /* Music.bank */ = {isa = PBXFileReference; lastKnownFileType = file; path = Music.bank; sourceTree = "<group>"; };
+		22A369F01B53055600AC62D7 /* Surround_Ambience.bank */ = {isa = PBXFileReference; lastKnownFileType = file; path = Surround_Ambience.bank; sourceTree = "<group>"; };
+		22A369F11B53055600AC62D7 /* UI_Menu.bank */ = {isa = PBXFileReference; lastKnownFileType = file; path = UI_Menu.bank; sourceTree = "<group>"; };
+		22A369F21B53055600AC62D7 /* Vehicles.bank */ = {isa = PBXFileReference; lastKnownFileType = file; path = Vehicles.bank; sourceTree = "<group>"; };
+		22A369F31B53055600AC62D7 /* Weapons.bank */ = {isa = PBXFileReference; lastKnownFileType = file; path = Weapons.bank; sourceTree = "<group>"; };
+		22A36A001B5305D500AC62D7 /* media */ = {isa = PBXFileReference; lastKnownFileType = folder; path = media; sourceTree = "<group>"; };
+		22A36A021B53136400AC62D7 /* FMODbridge.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = FMODbridge.cpp; sourceTree = "<group>"; };
+		22A36A031B53136400AC62D7 /* FMODbridge.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMODbridge.h; sourceTree = "<group>"; };
 		29B97324FDCFA39411CA2CEA /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = /System/Library/Frameworks/AppKit.framework; sourceTree = "<absolute>"; };
 		29B97325FDCFA39411CA2CEA /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = /System/Library/Frameworks/Foundation.framework; sourceTree = "<absolute>"; };
 		666E40EF0B67D87F005B491F /* macutils.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = macutils.mm; sourceTree = "<group>"; };
@@ -238,6 +274,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				B94198C309207E810029DAD1 /* Cocoa.framework in Frameworks */,
+				22A369DF1B5301AF00AC62D7 /* libfmodstudio.dylib in Frameworks */,
+				22A369E01B5301B100AC62D7 /* libfmodstudioL.dylib in Frameworks */,
+				22A369E11B5301B400AC62D7 /* libfmod.dylib in Frameworks */,
+				22A369E21B5301C000AC62D7 /* libfmodL.dylib in Frameworks */,
 				B94198C409207E810029DAD1 /* OpenGL.framework in Frameworks */,
 				D1ECACF71129213900F58615 /* SDL.framework in Frameworks */,
 				D1ECACF81129213900F58615 /* SDL_mixer.framework in Frameworks */,
@@ -288,9 +328,34 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
+		22A369E71B53055600AC62D7 /* media */ = {
+			isa = PBXGroup;
+			children = (
+				22A369E81B53055600AC62D7 /* 640148main_APU Shutdown.ogg */,
+				22A369E91B53055600AC62D7 /* 640165main_Lookin At It.ogg */,
+				22A369EA1B53055600AC62D7 /* 640166main_MECO.ogg */,
+				22A369EB1B53055600AC62D7 /* 640169main_Press to ATO.ogg */,
+				22A369EC1B53055600AC62D7 /* Character.bank */,
+				22A369ED1B53055600AC62D7 /* Master Bank.bank */,
+				22A369EE1B53055600AC62D7 /* Master Bank.strings.bank */,
+				22A369EF1B53055600AC62D7 /* Music.bank */,
+				22A369F01B53055600AC62D7 /* Surround_Ambience.bank */,
+				22A369F11B53055600AC62D7 /* UI_Menu.bank */,
+				22A369F21B53055600AC62D7 /* Vehicles.bank */,
+				22A369F31B53055600AC62D7 /* Weapons.bank */,
+			);
+			path = media;
+			sourceTree = "<group>";
+		};
 		29B97314FDCFA39411CA2CEA /* sauerbraten */ = {
 			isa = PBXGroup;
 			children = (
+				22A36A001B5305D500AC62D7 /* media */,
+				22A369E71B53055600AC62D7 /* media */,
+				22A369E51B53023B00AC62D7 /* libfmodstudio.dylib */,
+				22A369E61B53023B00AC62D7 /* libfmodstudioL.dylib */,
+				22A369E31B53022100AC62D7 /* libfmod.dylib */,
+				22A369E41B53022100AC62D7 /* libfmodL.dylib */,
 				080E96DDFE201D6D7F000001 /* Classes */,
 				29B97315FDCFA39411CA2CEA /* Other Sources */,
 				29B97317FDCFA39411CA2CEA /* Resources */,
@@ -328,6 +393,10 @@
 		29B97323FDCFA39411CA2CEA /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				22A369CE1B50356300AC62D7 /* libfmodstudio.dylib */,
+				22A369CF1B50356300AC62D7 /* libfmodstudioL.dylib */,
+				22A369CA1B50353F00AC62D7 /* libfmod.dylib */,
+				22A369CB1B50353F00AC62D7 /* libfmodL.dylib */,
 				1058C7A0FEA54F0111CA2CBB /* Linked Frameworks */,
 				1058C7A2FEA54F0111CA2CBB /* Other Frameworks */,
 			);
@@ -416,6 +485,8 @@
 				D19E776111977E82003753EF /* varray.h */,
 				B9AC7AA80D06DB44005506F8 /* vertmodel.h */,
 				B9AC7AAB0D06DB44005506F8 /* world.h */,
+				22A36A021B53136400AC62D7 /* FMODbridge.cpp */,
+				22A36A031B53136400AC62D7 /* FMODbridge.h */,
 			);
 			name = engine;
 			path = ../engine;
@@ -449,6 +520,10 @@
 		B9AC7AC10D06DB44005506F8 /* shared */ = {
 			isa = PBXGroup;
 			children = (
+				22A369D21B5035E700AC62D7 /* common_platform.h */,
+				22A369D31B5035E700AC62D7 /* common_platform.mm */,
+				22A369D41B5035E700AC62D7 /* common.cpp */,
+				22A369D51B5035E700AC62D7 /* common.h */,
 				D1B87D5D0F7F57C80063BD1C /* crypto.cpp */,
 				D1B87D5E0F7F57C80063BD1C /* stream.cpp */,
 				D1B87D5F0F7F57C80063BD1C /* zip.cpp */,
@@ -492,7 +567,7 @@
 				B94198A409207E810029DAD1 /* Resources */,
 				B94198A709207E810029DAD1 /* Sources */,
 				B94198C209207E810029DAD1 /* Frameworks */,
-				B9D19B900FB4C8150020B7FC /* CopyFiles */,
+				B9D19B900FB4C8150020B7FC /* Copy Files */,
 				B94199400920820E0029DAD1 /* ShellScript */,
 			);
 			buildRules = (
@@ -537,6 +612,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				22A36A011B5305D500AC62D7 /* media in Resources */,
 				D10F2F72111E240F0004BCB9 /* MainMenu.nib in Resources */,
 				D1E605B90E2416150045244E /* sauerbraten.icns in Resources */,
 				D10F2F73111E240F0004BCB9 /* InfoPlist.strings in Resources */,
@@ -578,6 +654,7 @@
 				666E40F00B67D87F005B491F /* macutils.mm in Sources */,
 				B9AC7ACF0D06DB44005506F8 /* 3dgui.cpp in Sources */,
 				B9AC7AD00D06DB44005506F8 /* bih.cpp in Sources */,
+				22A36A041B53136400AC62D7 /* FMODbridge.cpp in Sources */,
 				B9AC7AD20D06DB44005506F8 /* client.cpp in Sources */,
 				B9AC7AD30D06DB44005506F8 /* command.cpp in Sources */,
 				B9AC7AD40D06DB44005506F8 /* console.cpp in Sources */,
@@ -633,6 +710,8 @@
 				D1D040DA0F830C350043BA95 /* movie.cpp in Sources */,
 				D10F2F54111E23680004BCB9 /* Launcher.m in Sources */,
 				D10F2F55111E236C0004BCB9 /* main.m in Sources */,
+				22A369D71B5035E700AC62D7 /* common.cpp in Sources */,
+				22A369D61B5035E700AC62D7 /* common_platform.mm in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -661,6 +740,7 @@
 		B94198C709207E810029DAD1 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_CXX_LIBRARY = "compiler-default";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(FRAMEWORK_SEARCH_PATHS_QUOTED_FOR_TARGET_1)",
@@ -675,13 +755,23 @@
 				HEADER_SEARCH_PATHS = (
 					../enet/include,
 					../include/,
-					../../FMOD_Programmers_API/api/lowlevel/inc,
-					../../FMOD_Programmers_API/api/studio/inc,
+					../FMOD_Programmers_API/api/lowlevel/inc,
+					../FMOD_Programmers_API/api/studio/inc,
 				);
 				INFOPLIST_FILE = sauerbraten.plist;
-				LD_RUNPATH_SEARCH_PATHS = "@executable_path/../Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "/Users/Sam/Documents/git_repo/cube/sourcecode/xcode/Frameworks @executable_path/../Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					/Users/Sam/Documents/git_repo/cube/sourcecode/FMOD_Programmers_API/api/studio/lib,
+					/Users/Sam/Documents/git_repo/cube/sourcecode/FMOD_Programmers_API/api/lowlevel/lib,
+				);
 				MACOSX_DEPLOYMENT_TARGET = 10.5;
-				OTHER_LDFLAGS = "-lz";
+				OTHER_CFLAGS = "";
+				OTHER_LDFLAGS = (
+					../FMOD_Programmers_API/api/lowlevel/lib/libfmodL.dylib,
+					../FMOD_Programmers_API/api/studio/lib/libfmodstudioL.dylib,
+					"-lz",
+				);
 				PRODUCT_NAME = sauerbraten;
 			};
 			name = Debug;
@@ -689,6 +779,7 @@
 		B94198C809207E810029DAD1 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_CXX_LIBRARY = "compiler-default";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(FRAMEWORK_SEARCH_PATHS_QUOTED_FOR_TARGET_1)",
@@ -703,17 +794,27 @@
 				HEADER_SEARCH_PATHS = (
 					../enet/include,
 					../include/,
-					../../FMOD_Programmers_API/api/lowlevel/inc,
-					../../FMOD_Programmers_API/api/studio/inc,
+					../FMOD_Programmers_API/api/lowlevel/inc,
+					../FMOD_Programmers_API/api/studio/inc,
 				);
 				INFOPLIST_FILE = sauerbraten.plist;
-				LD_RUNPATH_SEARCH_PATHS = "@executable_path/../Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "/Users/Sam/Documents/git_repo/cube/sourcecode/xcode/Frameworks @executable_path/../Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					/Users/Sam/Documents/git_repo/cube/sourcecode/FMOD_Programmers_API/api/studio/lib,
+					/Users/Sam/Documents/git_repo/cube/sourcecode/FMOD_Programmers_API/api/lowlevel/lib,
+				);
 				MACOSX_DEPLOYMENT_TARGET = 10.5;
+				OTHER_CFLAGS = "";
 				OTHER_CPLUSPLUSFLAGS = (
 					"$(OTHER_CFLAGS)",
 					"-fomit-frame-pointer",
 				);
-				OTHER_LDFLAGS = "-lz";
+				OTHER_LDFLAGS = (
+					"-lz",
+					../FMOD_Programmers_API/api/studio/lib/libfmodstudio.dylib,
+					../FMOD_Programmers_API/api/lowlevel/lib/libfmod.dylib,
+				);
 				PRODUCT_NAME = sauerbraten;
 			};
 			name = Release;
@@ -721,6 +822,7 @@
 		B94198EB09207F510029DAD1 /* Release-Deployment */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_CXX_LIBRARY = "compiler-default";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(FRAMEWORK_SEARCH_PATHS_QUOTED_FOR_TARGET_1)",
@@ -735,12 +837,18 @@
 				HEADER_SEARCH_PATHS = (
 					../enet/include,
 					../include/,
-					../../FMOD_Programmers_API/api/lowlevel/inc,
-					../../FMOD_Programmers_API/api/studio/inc,
+					../FMOD_Programmers_API/api/lowlevel/inc,
+					../FMOD_Programmers_API/api/studio/inc,
 				);
 				INFOPLIST_FILE = sauerbraten.plist;
-				LD_RUNPATH_SEARCH_PATHS = "@executable_path/../Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "/Users/Sam/Documents/git_repo/cube/sourcecode/xcode/Frameworks @executable_path/../Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					/Users/Sam/Documents/git_repo/cube/sourcecode/FMOD_Programmers_API/api/studio/lib,
+					/Users/Sam/Documents/git_repo/cube/sourcecode/FMOD_Programmers_API/api/lowlevel/lib,
+				);
 				MACOSX_DEPLOYMENT_TARGET = 10.5;
+				OTHER_CFLAGS = "";
 				OTHER_CPLUSPLUSFLAGS = (
 					"$(OTHER_CFLAGS)",
 					"-fomit-frame-pointer",
@@ -762,7 +870,10 @@
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
 					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
+					../FMOD_Programmers_API/api/studio/inc,
+					../FMOD_Programmers_API/api/lowlevel/inc,
 				);
+				LD_RUNPATH_SEARCH_PATHS = "@executable_path/../Frameworks /Users/Sam/Documents/git_repo/cube/sourcecode/xcode/Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 10.5;
 				OTHER_CPLUSPLUSFLAGS = "$(OTHER_CFLAGS)";
 				STRIP_INSTALLED_PRODUCT = NO;
@@ -780,12 +891,15 @@
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
 					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
+					../FMOD_Programmers_API/api/studio/inc,
+					../FMOD_Programmers_API/api/lowlevel/inc,
 				);
+				LD_RUNPATH_SEARCH_PATHS = "@executable_path/../Frameworks /Users/Sam/Documents/git_repo/cube/sourcecode/xcode/Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 10.5;
 				OTHER_CPLUSPLUSFLAGS = "$(OTHER_CFLAGS)";
 				OTHER_LDFLAGS = (
-					../../FMOD_Programmers_API/api/lowlevel/lib/libfmodL.dylib,
-					../../FMOD_Programmers_API/api/studio/lib/libfmodstudioL.dylib,
+					../FMOD_Programmers_API/api/studio/lib/libfmodstudioL.dylib,
+					../FMOD_Programmers_API/api/lowlevel/lib/libfmodL.dylib,
 				);
 				STRIP_INSTALLED_PRODUCT = NO;
 				VALID_ARCHS = "i386 ppc ppc64 ppc7400 ppc970 x86_64";
@@ -803,12 +917,15 @@
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
 					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
+					../FMOD_Programmers_API/api/studio/inc,
+					../FMOD_Programmers_API/api/lowlevel/inc,
 				);
+				LD_RUNPATH_SEARCH_PATHS = "@executable_path/../Frameworks /Users/Sam/Documents/git_repo/cube/sourcecode/xcode/Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 10.5;
 				OTHER_CPLUSPLUSFLAGS = "$(OTHER_CFLAGS)";
 				OTHER_LDFLAGS = (
-					../../FMOD_Programmers_API/api/lowlevel/lib/libfmod.dylib,
-					../../FMOD_Programmers_API/api/studio/lib/libfmodstudio.dylib,
+					../FMOD_Programmers_API/api/studio/libfmodstudio.dylib,
+					../FMOD_Programmers_API/api/lowlevel/libfmod.dylib,
 				);
 				STRIP_INSTALLED_PRODUCT = NO;
 				VALID_ARCHS = "i386 ppc ppc64 ppc7400 ppc970 x86_64";

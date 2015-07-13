@@ -498,6 +498,7 @@ extern void writebinds(stream *f);
 extern void writecompletions(stream *f);
 
 // main
+
 enum
 {
     NOT_INITING = 0,

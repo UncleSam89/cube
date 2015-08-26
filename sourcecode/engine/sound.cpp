@@ -629,7 +629,6 @@ bool stopsound(int n, int chanid, int fade)
 int playsoundname(const char *s, const vec *loc, int vol, int flags, int loops, int fade, int chanid, int radius, int expire) 
 {
     
-    printf("PLAY SOUND %s\n",s);
     if(!vol) vol = 100;
     int id = findsound(s, vol, gamesounds, gameslots);
     if(id < 0) id = addsound(s, vol, 0, gamesounds, gameslots);

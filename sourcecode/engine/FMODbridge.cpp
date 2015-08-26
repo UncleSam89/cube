@@ -75,44 +75,26 @@ int FMOD_Main()
     
     ERRCHECK( fmod_sys->initialize(32, FMOD_STUDIO_INIT_NORMAL, FMOD_INIT_NORMAL, extraDriverData) );
     
-    printf("asd1\n");
     FMOD::Studio::Bank* masterBank = NULL;
     ERRCHECK( fmod_sys->loadBankFile(Common_MediaPath("Master Bank.bank"), FMOD_STUDIO_LOAD_BANK_NORMAL, &masterBank) );
-    printf("asd2\n");
 
     FMOD::Studio::Bank* stringsBank = NULL;
     ERRCHECK( fmod_sys->loadBankFile(Common_MediaPath("Master Bank.strings.bank"), FMOD_STUDIO_LOAD_BANK_NORMAL, &stringsBank) );
-    printf("asd3\n");
 
     ERRCHECK( fmod_sys->loadBankFile(Common_MediaPath("Ambientale.bank"), FMOD_STUDIO_LOAD_BANK_NORMAL, &ambienceBank) );
-    printf("asd4\n");
 
     ERRCHECK( fmod_sys->loadBankFile(Common_MediaPath("Armi.bank"), FMOD_STUDIO_LOAD_BANK_NORMAL, &weaponsBank) );
-    printf("asd5\n");
 
     ERRCHECK( fmod_sys->loadBankFile(Common_MediaPath("Oggetti.bank"), FMOD_STUDIO_LOAD_BANK_NORMAL, &objects) );
-    printf("asd5awd\n");
     
     ERRCHECK( fmod_sys->getEvent("event:/Ambientali/portalentrata", &portale) );
-    printf("asd6\n");
 
     ERRCHECK( fmod_sys->getEvent("event:/Oggetti/heal", &itemPick) );
-    printf("asd7\n");
-
     
     // Start loading explosion sample data and keep it in memory
     ERRCHECK( portale->loadSampleData() );
     ERRCHECK( itemPick->loadSampleData() );
 
-    
-    printf("asd8\n");
-    
-
-    printf("asd9\n");
-
-   
-    
-    
     return 0;
 }
 
@@ -188,7 +170,7 @@ void FMODbridge::playSound(char* name)
     
     
     
-    printf("NAME :- %s\n",name);
+    //printf("NAME :- %s\n",name);
     
 }
 

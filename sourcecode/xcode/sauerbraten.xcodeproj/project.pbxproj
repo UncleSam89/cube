@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		222537F51B8DFBCB0058007E /* Ambientale.bank in Resources */ = {isa = PBXBuildFile; fileRef = 222537F41B8DFBCB0058007E /* Ambientale.bank */; };
+		222537F71B8DFBD40058007E /* Armi.bank in Resources */ = {isa = PBXBuildFile; fileRef = 222537F61B8DFBD40058007E /* Armi.bank */; };
 		22A369D61B5035E700AC62D7 /* common_platform.mm in Sources */ = {isa = PBXBuildFile; fileRef = 22A369D31B5035E700AC62D7 /* common_platform.mm */; };
 		22A369D71B5035E700AC62D7 /* common.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 22A369D41B5035E700AC62D7 /* common.cpp */; };
 		22A369DF1B5301AF00AC62D7 /* libfmodstudio.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 22A369CE1B50356300AC62D7 /* libfmodstudio.dylib */; };
@@ -114,6 +116,8 @@
 /* Begin PBXFileReference section */
 		089C165DFE840E0CC02AAC07 /* English */ = {isa = PBXFileReference; fileEncoding = 10; lastKnownFileType = text.plist.strings; name = English; path = English.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = /System/Library/Frameworks/Cocoa.framework; sourceTree = "<absolute>"; };
+		222537F41B8DFBCB0058007E /* Ambientale.bank */ = {isa = PBXFileReference; lastKnownFileType = file; path = Ambientale.bank; sourceTree = "<group>"; };
+		222537F61B8DFBD40058007E /* Armi.bank */ = {isa = PBXFileReference; lastKnownFileType = file; path = Armi.bank; sourceTree = "<group>"; };
 		22A369CA1B50353F00AC62D7 /* libfmod.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libfmod.dylib; path = ../FMOD_Programmers_API/api/lowlevel/lib/libfmod.dylib; sourceTree = "<group>"; };
 		22A369CB1B50353F00AC62D7 /* libfmodL.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libfmodL.dylib; path = ../FMOD_Programmers_API/api/lowlevel/lib/libfmodL.dylib; sourceTree = "<group>"; };
 		22A369CE1B50356300AC62D7 /* libfmodstudio.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libfmodstudio.dylib; path = ../FMOD_Programmers_API/api/studio/lib/libfmodstudio.dylib; sourceTree = "<group>"; };
@@ -331,6 +335,8 @@
 		22A369E71B53055600AC62D7 /* media */ = {
 			isa = PBXGroup;
 			children = (
+				222537F41B8DFBCB0058007E /* Ambientale.bank */,
+				222537F61B8DFBD40058007E /* Armi.bank */,
 				22A369E81B53055600AC62D7 /* 640148main_APU Shutdown.ogg */,
 				22A369E91B53055600AC62D7 /* 640165main_Lookin At It.ogg */,
 				22A369EA1B53055600AC62D7 /* 640166main_MECO.ogg */,
@@ -616,7 +622,9 @@
 				D10F2F72111E240F0004BCB9 /* MainMenu.nib in Resources */,
 				D1E605B90E2416150045244E /* sauerbraten.icns in Resources */,
 				D10F2F73111E240F0004BCB9 /* InfoPlist.strings in Resources */,
+				222537F71B8DFBD40058007E /* Armi.bank in Resources */,
 				D10F2F74111E240F0004BCB9 /* Maps.icns in Resources */,
+				222537F51B8DFBCB0058007E /* Ambientale.bank in Resources */,
 				D10F2F78111E240F0004BCB9 /* help in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

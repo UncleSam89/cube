@@ -9,14 +9,25 @@
 #include "FMODbridge.h"
 
 bool OST;
-bool SHOT;
+
 
 void *extraDriverData = NULL;
 FMOD::Studio::System* fmod_sys;
-FMOD::Studio::EventDescription* explosionDescription;
-FMOD::Studio::Bank* ambienceBank;
-FMOD::Studio::EventDescription* loopingAmbienceDescription;
-FMOD::Studio::EventInstance* loopingAmbienceInstance;
+
+FMOD::Studio::EventDescription* explosionDescription = NULL;
+FMOD::Studio::Bank* ambienceBank = NULL;
+FMOD::Studio::EventDescription* portale = NULL;
+FMOD::Studio::EventDescription* itemPick = NULL;
+
+
+FMOD::Studio::EventDescription* loopingAmbienceDescription = NULL;
+FMOD::Studio::EventInstance* loopingAmbienceInstance = NULL;
+
+FMOD::Studio::Bank* weaponsBank = NULL;
+FMOD::Studio::Bank* monsters = NULL;
+FMOD::Studio::Bank* objects = NULL;
+FMOD::Studio::Bank* character = NULL;
+FMOD::Studio::Bank* speak = NULL;
 
 
 int FMOD_Main();
@@ -26,7 +37,6 @@ FMODbridge::FMODbridge()
     FMOD_Main();
     
     OST = false;
-    SHOT = false;
     
     pthread_attr_t  attr;
     pthread_t       posixThreadID;
@@ -65,33 +75,40 @@ int FMOD_Main()
     
     ERRCHECK( fmod_sys->initialize(32, FMOD_STUDIO_INIT_NORMAL, FMOD_INIT_NORMAL, extraDriverData) );
     
+    printf("asd1\n");
     FMOD::Studio::Bank* masterBank = NULL;
     ERRCHECK( fmod_sys->loadBankFile(Common_MediaPath("Master Bank.bank"), FMOD_STUDIO_LOAD_BANK_NORMAL, &masterBank) );
-    
+    printf("asd2\n");
+
     FMOD::Studio::Bank* stringsBank = NULL;
     ERRCHECK( fmod_sys->loadBankFile(Common_MediaPath("Master Bank.strings.bank"), FMOD_STUDIO_LOAD_BANK_NORMAL, &stringsBank) );
+    printf("asd3\n");
+
+    ERRCHECK( fmod_sys->loadBankFile(Common_MediaPath("Ambientale.bank"), FMOD_STUDIO_LOAD_BANK_NORMAL, &ambienceBank) );
+    printf("asd4\n");
+
+    ERRCHECK( fmod_sys->loadBankFile(Common_MediaPath("Armi.bank"), FMOD_STUDIO_LOAD_BANK_NORMAL, &weaponsBank) );
+    printf("asd5\n");
+
+    ERRCHECK( fmod_sys->loadBankFile(Common_MediaPath("Oggetti.bank"), FMOD_STUDIO_LOAD_BANK_NORMAL, &objects) );
+    printf("asd5awd\n");
     
-    ambienceBank = NULL;
-    ERRCHECK( fmod_sys->loadBankFile(Common_MediaPath("Surround_Ambience.bank"), FMOD_STUDIO_LOAD_BANK_NORMAL, &ambienceBank) );
-    
-    FMOD::Studio::Bank* menuBank = NULL;
-    ERRCHECK( fmod_sys->loadBankFile(Common_MediaPath("UI_Menu.bank"), FMOD_STUDIO_LOAD_BANK_NORMAL, &menuBank) );
-    
-    FMOD::Studio::Bank* weaponsBank = NULL;
-    ERRCHECK( fmod_sys->loadBankFile(Common_MediaPath("Weapons.bank"), FMOD_STUDIO_LOAD_BANK_NORMAL, &weaponsBank) );
-    
-    explosionDescription = NULL;
-    ERRCHECK( fmod_sys->getEvent("event:/Explosions/Single Explosion", &explosionDescription) );
+    ERRCHECK( fmod_sys->getEvent("event:/Ambientali/portalentrata", &portale) );
+    printf("asd6\n");
+
+    ERRCHECK( fmod_sys->getEvent("event:/Oggetti/heal", &itemPick) );
+    printf("asd7\n");
+
     
     // Start loading explosion sample data and keep it in memory
-    ERRCHECK( explosionDescription->loadSampleData() );
+    ERRCHECK( portale->loadSampleData() );
+    ERRCHECK( itemPick->loadSampleData() );
+
     
+    printf("asd8\n");
     
-    loopingAmbienceDescription = NULL;
-    ERRCHECK( fmod_sys->getEvent("event:/Ambience/Country", &loopingAmbienceDescription) );
-    
-   loopingAmbienceInstance = NULL;
-    ERRCHECK( loopingAmbienceDescription->createInstance(&loopingAmbienceInstance) );
+
+    printf("asd9\n");
 
    
     
@@ -115,19 +132,7 @@ void* FMODbridge::main_thread(void* data)
             OST = false;
         }
         
-        if(SHOT)
-        {
-            // One-shot event
-            FMOD::Studio::EventInstance* eventInstance = NULL;
-            ERRCHECK( explosionDescription->createInstance(&eventInstance) );
-            
-            ERRCHECK( eventInstance->start() );
-            
-            // Release will clean up the instance when it completes
-            ERRCHECK( eventInstance->release() );
-            SHOT = false;
-        }
-         
+        
         
         ERRCHECK( fmod_sys->update() );
 
@@ -140,7 +145,7 @@ void* FMODbridge::main_thread(void* data)
 
 void FMODbridge::playOST()
 {
-    OST = true;
+    //OST = true;
 }
 
 
@@ -148,8 +153,42 @@ void FMODbridge::playOST()
 
 void FMODbridge::playSound(char* name)
 {
+    if(!strcmp(name,"q009/pistol1") || !strcmp(name,"q009/pistol2") || !strcmp(name,"q009/pistol3") )
+    {
+
+        /*
+        FMOD::Studio::EventInstance* eventInstance = NULL;
+        ERRCHECK( explosionDescription->createInstance(&eventInstance) );
+        
+        ERRCHECK( eventInstance->start() );
+        
+        // Release will clean up the instance when it completes
+        ERRCHECK( eventInstance->release() );
+        */
+    }
+    
+    if(!strcmp(name,"q009/teleport"))
+    {
+        FMOD::Studio::EventInstance* eventInstance = NULL;
+        ERRCHECK( portale->createInstance(&eventInstance) );
+        
+        ERRCHECK( eventInstance->start() );
+        ERRCHECK( eventInstance->release() );
+        
+    }
+    
+    if(!strcmp(name,"aard/itempick"))
+    {
+        FMOD::Studio::EventInstance* eventInstance = NULL;
+        ERRCHECK( itemPick->createInstance(&eventInstance) );
+        ERRCHECK( eventInstance->start() );
+        ERRCHECK( eventInstance->release() );
+        
+    }
+    
+    
+    
     printf("NAME :- %s\n",name);
-    SHOT = true;
     
 }
 

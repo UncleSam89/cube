@@ -525,8 +525,8 @@ int playsound(int n, const vec *loc, extentity *ent, int flags, int loops, int f
     soundconfig &config = sounds[n];
     soundslot &slot = slots[config.chooseslot()];
 
-    
-    FMODB->playSound(slot.sample->name);
+    if((!strcmp(slot.sample->name,"q009/teleport") && loc == NULL) || strcmp(slot.sample->name,"q009/teleport") != 0)
+        FMODB->playSound(slot.sample->name);
     return n;
 
     

@@ -518,14 +518,18 @@ int playsound(int n, const vec *loc, extentity *ent, int flags, int loops, int f
 {
     if(nosound || !soundvol || minimized) return -1;
     
-    FMODB->playSound();
-    return n;
     
     vector<soundslot> &slots = ent || flags&SND_MAP ? mapslots : gameslots;
     vector<soundconfig> &sounds = ent || flags&SND_MAP ? mapsounds : gamesounds;
     if(!sounds.inrange(n)) { conoutf(CON_WARN, "unregistered sound: %d", n); return -1; }
     soundconfig &config = sounds[n];
+    soundslot &slot = slots[config.chooseslot()];
 
+    if((!strcmp(slot.sample->name,"q009/teleport") && loc == NULL) || strcmp(slot.sample->name,"q009/teleport") != 0)
+        FMODB->playSound(slot.sample->name);
+    return n;
+
+    
     if(loc && (maxsoundradius || radius > 0))
     {
         // cull sounds that are unlikely to be heard
@@ -568,10 +572,8 @@ int playsound(int n, const vec *loc, extentity *ent, int flags, int loops, int f
     }
     if(fade < 0) return -1;
 
-    soundslot &slot = slots[config.chooseslot()];
     if(!slot.sample->chunk && !loadsoundslot(slot)) return -1;
 
-    dbgsound = 1;
     if(dbgsound) conoutf("sound: %s", slot.sample->name);
  
     chanid = -1;
@@ -627,7 +629,6 @@ bool stopsound(int n, int chanid, int fade)
 int playsoundname(const char *s, const vec *loc, int vol, int flags, int loops, int fade, int chanid, int radius, int expire) 
 {
     
-    printf("PLAY SOUND %s\n",s);
     if(!vol) vol = 100;
     int id = findsound(s, vol, gamesounds, gameslots);
     if(id < 0) id = addsound(s, vol, 0, gamesounds, gameslots);

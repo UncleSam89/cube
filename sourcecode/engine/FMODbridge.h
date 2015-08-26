@@ -24,7 +24,7 @@ public:
     //FMODbridge();
     
     void playOST();
-    void playSound();
+    void playSound(char* name);
 
 private:
  

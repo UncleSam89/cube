@@ -146,8 +146,9 @@ void FMODbridge::playOST()
 
 
 
-void FMODbridge::playSound()
+void FMODbridge::playSound(char* name)
 {
+    printf("NAME :- %s\n",name);
     SHOT = true;
     
 }

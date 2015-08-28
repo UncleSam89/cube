@@ -8,35 +8,51 @@
 
 #include "FMODbridge.h"
 
-bool OST;
 
-
-void *extraDriverData = NULL;
-FMOD::Studio::System* fmod_sys;
-
-FMOD::Studio::EventDescription* explosionDescription = NULL;
-FMOD::Studio::Bank* ambienceBank = NULL;
-FMOD::Studio::EventDescription* portale = NULL;
-FMOD::Studio::EventDescription* itemPick = NULL;
-
-
-FMOD::Studio::EventDescription* loopingAmbienceDescription = NULL;
-FMOD::Studio::EventInstance* loopingAmbienceInstance = NULL;
-
-FMOD::Studio::Bank* weaponsBank = NULL;
-FMOD::Studio::Bank* monsters = NULL;
-FMOD::Studio::Bank* objects = NULL;
-FMOD::Studio::Bank* character = NULL;
-FMOD::Studio::Bank* speak = NULL;
-
-
-int FMOD_Main();
+FMOD::Studio::System* fmod_sys = NULL;
+int FMOD_Main(){return 0;};
 
 FMODbridge::FMODbridge()
 {
     FMOD_Main();
-    
     OST = false;
+    
+    
+    Common_Init(&extraDriverData);
+    
+    ERRCHECK( FMOD::Studio::System::create(&fmod_sys) );
+    
+    // The example Studio project is authored for 5.1 sound, so set up the system output mode to match
+    FMOD::System* lowLevelSystem = NULL;
+    ERRCHECK( fmod_sys->getLowLevelSystem(&lowLevelSystem) );
+    ERRCHECK( lowLevelSystem->setSoftwareFormat(0, FMOD_SPEAKERMODE_5POINT1, 0) );
+    
+    ERRCHECK( fmod_sys->initialize(32, FMOD_STUDIO_INIT_NORMAL, FMOD_INIT_NORMAL, extraDriverData) );
+    
+    FMOD::Studio::Bank* masterBank = NULL;
+    ERRCHECK( fmod_sys->loadBankFile(Common_MediaPath("Master Bank.bank"), FMOD_STUDIO_LOAD_BANK_NORMAL, &masterBank) );
+    
+    FMOD::Studio::Bank* stringsBank = NULL;
+    ERRCHECK( fmod_sys->loadBankFile(Common_MediaPath("Master Bank.strings.bank"), FMOD_STUDIO_LOAD_BANK_NORMAL, &stringsBank) );
+    
+    ERRCHECK( fmod_sys->loadBankFile(Common_MediaPath("Ambientale.bank"), FMOD_STUDIO_LOAD_BANK_NORMAL, &ambienceBank) );
+    
+    ERRCHECK( fmod_sys->loadBankFile(Common_MediaPath("Armi.bank"), FMOD_STUDIO_LOAD_BANK_NORMAL, &weaponsBank) );
+    
+    ERRCHECK( fmod_sys->loadBankFile(Common_MediaPath("Oggetti.bank"), FMOD_STUDIO_LOAD_BANK_NORMAL, &objects) );
+    
+    ERRCHECK( fmod_sys->getEvent("event:/Ambientali/portalentrata", &portale) );
+    
+    ERRCHECK( fmod_sys->getEvent("event:/Oggetti/heal", &itemPick) );
+
+    ERRCHECK( fmod_sys->getEvent("event:/Ambientali/torcia", &torcia) );
+
+    
+    // Start loading explosion sample data and keep it in memory
+    ERRCHECK( portale->loadSampleData() );
+    ERRCHECK( itemPick->loadSampleData() );
+
+    
     
     pthread_attr_t  attr;
     pthread_t       posixThreadID;
@@ -60,43 +76,7 @@ FMODbridge::FMODbridge()
 
 
 
-int FMOD_Main()
-{
-    
-    Common_Init(&extraDriverData);
-    
-    fmod_sys = NULL;
-    ERRCHECK( FMOD::Studio::System::create(&fmod_sys) );
-    
-    // The example Studio project is authored for 5.1 sound, so set up the system output mode to match
-    FMOD::System* lowLevelSystem = NULL;
-    ERRCHECK( fmod_sys->getLowLevelSystem(&lowLevelSystem) );
-    ERRCHECK( lowLevelSystem->setSoftwareFormat(0, FMOD_SPEAKERMODE_5POINT1, 0) );
-    
-    ERRCHECK( fmod_sys->initialize(32, FMOD_STUDIO_INIT_NORMAL, FMOD_INIT_NORMAL, extraDriverData) );
-    
-    FMOD::Studio::Bank* masterBank = NULL;
-    ERRCHECK( fmod_sys->loadBankFile(Common_MediaPath("Master Bank.bank"), FMOD_STUDIO_LOAD_BANK_NORMAL, &masterBank) );
 
-    FMOD::Studio::Bank* stringsBank = NULL;
-    ERRCHECK( fmod_sys->loadBankFile(Common_MediaPath("Master Bank.strings.bank"), FMOD_STUDIO_LOAD_BANK_NORMAL, &stringsBank) );
-
-    ERRCHECK( fmod_sys->loadBankFile(Common_MediaPath("Ambientale.bank"), FMOD_STUDIO_LOAD_BANK_NORMAL, &ambienceBank) );
-
-    ERRCHECK( fmod_sys->loadBankFile(Common_MediaPath("Armi.bank"), FMOD_STUDIO_LOAD_BANK_NORMAL, &weaponsBank) );
-
-    ERRCHECK( fmod_sys->loadBankFile(Common_MediaPath("Oggetti.bank"), FMOD_STUDIO_LOAD_BANK_NORMAL, &objects) );
-    
-    ERRCHECK( fmod_sys->getEvent("event:/Ambientali/portalentrata", &portale) );
-
-    ERRCHECK( fmod_sys->getEvent("event:/Oggetti/heal", &itemPick) );
-    
-    // Start loading explosion sample data and keep it in memory
-    ERRCHECK( portale->loadSampleData() );
-    ERRCHECK( itemPick->loadSampleData() );
-
-    return 0;
-}
 
 
 
@@ -107,22 +87,15 @@ void* FMODbridge::main_thread(void* data)
     do
     {
         Common_Update();
-        
-        if(OST)
-        {
-            ERRCHECK( loopingAmbienceInstance->start() );
-            OST = false;
-        }
-        
-        
-        
         ERRCHECK( fmod_sys->update() );
-
-        Common_Sleep(10);
+        Common_Sleep(1);
     } while (true);
+    
+    /*
+     riferimento stop e unload
     ERRCHECK( loopingAmbienceInstance->stop(FMOD_STUDIO_STOP_IMMEDIATE) );
     ERRCHECK( ambienceBank->unload() );
-
+    */
 }
 
 void FMODbridge::playOST()
@@ -174,4 +147,37 @@ void FMODbridge::playSound(char* name)
     
 }
 
+void FMODbridge::startTorch(entity* e)
+{
+    int p = buf_torches.find(e);
+    if(p!=-1)
+    {
+        buf_torches[p].s->start();
+    }
+    else
+    {
+    
+        FMOD::Studio::EventInstance* s = NULL;
+        ERRCHECK( torcia->createInstance(&s) );
+        ERRCHECK( s->start() );
+        //ERRCHECK( s->release() );
+    
+        buf_torches.add(e,s);
+    
+    }
+}
 
+
+void FMODbridge::stopTorch(entity* e)
+{
+ 
+    int p = buf_torches.find(e);
+    if(p==-1) return;
+    
+    buf_torches[p].s->stop(FMOD_STUDIO_STOP_IMMEDIATE);
+    //buf_torches.remove(e);
+    
+    
+    
+    
+}

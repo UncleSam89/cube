@@ -86,9 +86,9 @@ void* FMODbridge::main_thread(void* data)
     
     do
     {
-        Common_Update();
+        //Common_Update();
         ERRCHECK( fmod_sys->update() );
-        Common_Sleep(1);
+        //Common_Sleep(2);
     } while (true);
     
     /*
@@ -147,23 +147,27 @@ void FMODbridge::playSound(char* name)
     
 }
 
+void FMODbridge::addTorch(entity *e)
+{
+    int p = buf_torches.find(e);
+    if(p==-1)
+    {
+        FMOD::Studio::EventInstance* s = NULL;
+        ERRCHECK( torcia->createInstance(&s) );
+        buf_torches.add(e,s);
+    }
+}
+
 void FMODbridge::startTorch(entity* e)
 {
     int p = buf_torches.find(e);
     if(p!=-1)
     {
-        buf_torches[p].s->start();
-    }
-    else
-    {
-    
-        FMOD::Studio::EventInstance* s = NULL;
-        ERRCHECK( torcia->createInstance(&s) );
-        ERRCHECK( s->start() );
-        //ERRCHECK( s->release() );
-    
-        buf_torches.add(e,s);
-    
+        if(!buf_torches[p].playing)
+        {
+            buf_torches[p].s->start();
+            buf_torches[p].playing = true;
+        }
     }
 }
 
@@ -173,11 +177,9 @@ void FMODbridge::stopTorch(entity* e)
  
     int p = buf_torches.find(e);
     if(p==-1) return;
-    
-    buf_torches[p].s->stop(FMOD_STUDIO_STOP_IMMEDIATE);
+    buf_torches[p].playing = false;
+    buf_torches[p].s->stop(FMOD_STUDIO_STOP_ALLOWFADEOUT);
     //buf_torches.remove(e);
-    
-    
     
     
 }

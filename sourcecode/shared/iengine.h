@@ -356,8 +356,12 @@ enum
     SND_MAP = 1<<0
 };
 
+//FMOD AGGIUNTE
+extern int addTorch(entity *e);
 extern int playTorch(entity *e);
 extern int stopTorch(entity *e);
+////////////////
+
 
 extern int playsound(int n, const vec *loc = NULL, extentity *ent = NULL, int flags = 0, int loops = 0, int fade = 0, int chanid = -1, int radius = 0, int expire = -1);
 extern int playsoundname(const char *s, const vec *loc = NULL, int vol = 0, int flags = 0, int loops = 0, int fade = 0, int chanid = -1, int radius = 0, int expire = -1);

@@ -22,6 +22,7 @@ typedef struct torch
 {
     entity* t;
     FMOD::Studio::EventInstance* s;
+    bool playing;
     
     bool operator==(const torch &other)
     {
@@ -43,7 +44,6 @@ typedef struct torches
         torch t;
         t.t = x;
         t.s = s;
-        
         ts.put(t);
         n_ts++;
     };
@@ -87,6 +87,7 @@ public:
     void playSound(char* name);
     void startTorch(entity* e);
     void stopTorch(entity* e);
+    void addTorch(entity* e);
 
 private:
     

@@ -74,11 +74,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "../engine/FMODbridge.h"
-            timestampString = "462463953.97643"
+            timestampString = "462478038.951346"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "93"
-            endingLineNumber = "93"
+            startingLineNumber = "94"
+            endingLineNumber = "94"
             landmarkName = "class FMODbridge"
             landmarkType = "3">
          </BreakpointContent>

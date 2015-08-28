@@ -528,6 +528,11 @@ int stopTorch(entity *e)
     return 0;
 }
 
+int addTorch(entity *e)
+{
+    FMODB->addTorch(e);
+    return 0;
+}
 
 int playsound(int n, const vec *loc, extentity *ent, int flags, int loops, int fade, int chanid, int radius, int expire)
 {

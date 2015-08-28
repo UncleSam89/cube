@@ -1345,10 +1345,9 @@ static void makeparticles(entity &e)
     {
         case 0: //fire and smoke -  <radius> <height> <rgb> - 0 values default to compat for old maps
         {
-            //use this for flame filter
-            printf("POSITION FLAME :- %f \n",camera1->o.dist(e.o));
+            addTorch(&e);
             
-            if(camera1->o.dist(e.o) < 50.0f)
+            if(camera1->o.dist(e.o) < 40.0f)
             {
                 playTorch(&e);
             }

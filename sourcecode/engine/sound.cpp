@@ -2,11 +2,12 @@
 
 #include "engine.h"
 #include "SDL_mixer.h"
+
 #include "FMODbridge.h"
+FMODbridge *FMODB;
 #define MAXVOL MIX_MAX_VOLUME
 
 bool nosound = true;
-FMODbridge *FMODB;
 
 struct soundsample
 {
@@ -513,11 +514,30 @@ void preloadmapsounds()
         if(e.type==ET_SOUND) preloadsound(mapsounds, mapslots, e.attr1);
     }
 }
- 
+
+int playTorch(entity* e)
+{
+    FMODB->startTorch(e);
+
+    return 0;
+}
+
+int stopTorch(entity *e)
+{
+    FMODB->stopTorch(e);
+    return 0;
+}
+
+int addTorch(entity *e)
+{
+    FMODB->addTorch(e);
+    return 0;
+}
+
 int playsound(int n, const vec *loc, extentity *ent, int flags, int loops, int fade, int chanid, int radius, int expire)
 {
     if(nosound || !soundvol || minimized) return -1;
-    
+ 
     
     vector<soundslot> &slots = ent || flags&SND_MAP ? mapslots : gameslots;
     vector<soundconfig> &sounds = ent || flags&SND_MAP ? mapsounds : gamesounds;

@@ -83,8 +83,11 @@ void addparticleemitters()
         extentity &e = *ents[i];
         if(e.type != ET_PARTICLES) continue;
         emitters.add(particleemitter(&e));
+        addTorch(&e);
+
     }
     regenemitters = false;
+
 }
 
 enum
@@ -1345,11 +1348,18 @@ static void makeparticles(entity &e)
     {
         case 0: //fire and smoke -  <radius> <height> <rgb> - 0 values default to compat for old maps
         {
-            //use this for flame filter
-            //printf("POSITION FLAME :- %f \n",camera1->o.dist(e.o));
+            
+            if(camera1->o.dist(e.o) < 45.0f)
+            {
+                playTorch(&e);
+            }
+            else
+            {
+                stopTorch(&e);
+            }
             
             //regularsplash(PART_FIREBALL1, 0xFFC8C8, 150, 1, 40, e.o, 4.8f);
-            //regularsplash(PART_SMOKE, 0x897661, 50, 1, 200,  vec(e.o.x, e.o.y, e.o.z+3.0f), 2.4f, -20, 3);
+            //regularsplash(PART_SMOKE, 0x897661, 50, 1, 200,  vec(e.o.x, e.o.y, e.o.z+3.0f), 2.4f, -20, 3);t
             float radius = e.attr2 ? float(e.attr2)/100.0f : 1.5f,
                   height = e.attr3 ? float(e.attr3)/100.0f : radius/3;
             regularflame(PART_FLAME, e.o, radius, height, e.attr4 ? colorfromattr(e.attr4) : 0x903020, 3, 2.0f);

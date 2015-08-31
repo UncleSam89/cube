@@ -83,8 +83,11 @@ void addparticleemitters()
         extentity &e = *ents[i];
         if(e.type != ET_PARTICLES) continue;
         emitters.add(particleemitter(&e));
+        addTorch(&e);
+
     }
     regenemitters = false;
+
 }
 
 enum
@@ -1345,9 +1348,8 @@ static void makeparticles(entity &e)
     {
         case 0: //fire and smoke -  <radius> <height> <rgb> - 0 values default to compat for old maps
         {
-            addTorch(&e);
             
-            if(camera1->o.dist(e.o) < 40.0f)
+            if(camera1->o.dist(e.o) < 45.0f)
             {
                 playTorch(&e);
             }

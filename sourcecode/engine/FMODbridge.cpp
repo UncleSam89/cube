@@ -87,7 +87,7 @@ void* FMODbridge::main_thread(void* data)
     do
     {
         //Common_Update();
-        ERRCHECK( fmod_sys->update() );
+        fmod_sys->update();
         //Common_Sleep(2);
     } while (true);
     
@@ -122,7 +122,7 @@ void FMODbridge::playSound(char* name)
         */
     }
     
-    if(!strcmp(name,"q009/teleport"))
+    else if(!strcmp(name,"q009/teleport"))
     {
         FMOD::Studio::EventInstance* eventInstance = NULL;
         ERRCHECK( portale->createInstance(&eventInstance) );
@@ -132,7 +132,7 @@ void FMODbridge::playSound(char* name)
         
     }
     
-    if(!strcmp(name,"aard/itempick"))
+    else if(!strcmp(name,"aard/itempick"))
     {
         FMOD::Studio::EventInstance* eventInstance = NULL;
         ERRCHECK( itemPick->createInstance(&eventInstance) );
@@ -140,7 +140,6 @@ void FMODbridge::playSound(char* name)
         ERRCHECK( eventInstance->release() );
         
     }
-    
     
     
     //printf("NAME :- %s\n",name);
@@ -152,22 +151,22 @@ void FMODbridge::addTorch(entity *e)
     int p = buf_torches.find(e);
     if(p==-1)
     {
+        
         FMOD::Studio::EventInstance* s = NULL;
         ERRCHECK( torcia->createInstance(&s) );
         buf_torches.add(e,s);
+        buf_torches[buf_torches.n_ts - 1].s->start();
+        buf_torches[buf_torches.n_ts - 1].s->stop(FMOD_STUDIO_STOP_IMMEDIATE);
     }
 }
 
 void FMODbridge::startTorch(entity* e)
 {
     int p = buf_torches.find(e);
-    if(p!=-1)
+    if(p!=-1 && !buf_torches[p].playing)
     {
-        if(!buf_torches[p].playing)
-        {
             buf_torches[p].s->start();
             buf_torches[p].playing = true;
-        }
     }
 }
 
@@ -179,7 +178,5 @@ void FMODbridge::stopTorch(entity* e)
     if(p==-1) return;
     buf_torches[p].playing = false;
     buf_torches[p].s->stop(FMOD_STUDIO_STOP_ALLOWFADEOUT);
-    //buf_torches.remove(e);
-    
     
 }
